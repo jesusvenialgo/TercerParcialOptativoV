@@ -40,9 +40,13 @@ namespace Repository.Data
                 _context.SaveChanges();
             }
         }
+        public ClienteModel ConsultarCI(string documento)
+        {
+            return _context.cliente.FirstOrDefault(c => c.documento == documento);
+        }
         public IEnumerable<ClienteModel> GetAllClientes()
         {
-            return _context.cliente.ToList();
+            return _context.cliente.Where(c => c.estado == "Activo").ToList();
         }
     }
 }

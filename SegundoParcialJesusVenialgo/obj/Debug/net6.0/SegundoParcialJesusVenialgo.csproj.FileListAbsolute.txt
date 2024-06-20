@@ -39,3 +39,6 @@ E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\Segundo
 E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\obj\Debug\net6.0\SegundoParcialJesusVenialgo.genruntimeconfig.cache
 E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\obj\Debug\net6.0\ref\SegundoParcialJesusVenialgo.dll
 E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\obj\Debug\net6.0\SegundoParcialJesusVenialgo.csproj.CopyComplete
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\bin\Debug\net6.0\FluentValidation.dll
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Segundo Parcial\SegundoParcialJesusVenialgo\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

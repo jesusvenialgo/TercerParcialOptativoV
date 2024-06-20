@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repository.Data;
-using Services.Logica;
+using Services;
 
 namespace SegundoParcialJesusVenialgo.Controllers
 {
@@ -20,21 +20,30 @@ namespace SegundoParcialJesusVenialgo.Controllers
         [HttpPost("ADD")]
         public IActionResult CreateFactura([FromBody] FacturaModel factura)
         {
-            if (!_facturaService.ValidarDatosFacturas(factura))
-                return BadRequest("Los datos cargados no son válidos");
+            var validador = new Services.FacturaService.ValidarFacturaFluente(_facturaRepository);
+            var resultado = validador.Validate(factura);
+            if (!resultado.IsValid)
+            {
+                return BadRequest(resultado.Errors);
+            }
 
             _facturaRepository.AddFactura(factura);
             return Ok("Se han agregado los datos correctamente");
         }
         [HttpPut("UPDATE")]
-        public IActionResult UpdateFactura(int id, [FromBody] FacturaModel factura)
+        public IActionResult UpdateFactura([FromBody] FacturaModel factura)
         {
-            var exFact = _facturaRepository.GetFacturaById(id);
+            var exFact = _facturaRepository.GetFacturaById(factura.id);
             if (exFact == null)
                 return NotFound("ID no encontrado.");
 
-            if (!_facturaService.ValidarDatosFacturas(factura))
-                return BadRequest("Se encontraron problemas con las validaciones.");
+            var validador = new Services.FacturaService.ValidarFacturaFluente(_facturaRepository);
+            var resultado = validador.Validate(factura);
+
+            if (!resultado.IsValid)
+            {
+                return BadRequest(resultado.Errors);
+            }
 
             exFact.nro_factura = factura.nro_factura;
             exFact.fecha_hora = factura.fecha_hora;
